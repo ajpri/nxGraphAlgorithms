@@ -30,7 +30,7 @@ def degree_sequence(G):
 def maxmimum_degree(G):
     return degree_sequence(G)[0]
 
-def minimim_degree(G):
+def minimum_degree(G):
     return degree_sequence(G)[-1]
 
 def avg_degree(G):
@@ -66,6 +66,7 @@ def distance(G,v,w):
 
 def eccentricity(G,v):
     return len(distance_array (G,v)) - 1
+
 def radius(G):
     return min([eccentricity(G,v) for v in V(G)])
 

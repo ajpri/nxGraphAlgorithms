@@ -51,3 +51,5 @@ def residue(G):
     L = degree_sequence(G)
     havel_hakimi_process(L)
     return len(L)
+
+#print(residue(G))

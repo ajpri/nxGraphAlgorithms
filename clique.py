@@ -1,28 +1,26 @@
-
-# -*- coding: utf-8 -*-
-
 import networkx as nx
-#from functions.global_properties import V
 
-G = nx.read_edgelist('G.txt')
-nodes = G.nodes
-#print(V(G))
+from itertools import *
+
+from functions.global_properties import V
+
+from functions.local_properties import neighbors
+
+G = nx.read_edgelist('graph_library/pan.txt')
 
 
-
-
-#def is_clique(G, clique_nodes):
-   # for x in clique_nodes:
-        #for y in clique_nodes:
-            #if x!= y:
-                #if not(G.has_edge(x,y)):
-                    #return False
-    #return True
-    
-    
-def is_clique(G, nodes):
-    for x in nodes(nodes, 2):
-        if x[1] not in G[x[0]]:
+def is_clique(G,S): #set of vertices where every pair in the set forms an edge
+    for v in S:
+        if list(set(S)&set(neighbors(G,v))) != []:  #[] <-- empty list
             return False
+    
     return True
-#print(is_clique(G,nodes))
+
+def largest_clique_set(G):
+    n = len(V(G))
+    for x in range(n,2,-1):    #increasing
+        for x in combinations(V(G),x):
+            if is_clique(G,x) == True:
+                return x
+
+print('Largest Clique:',largest_clique_set(G))

@@ -1,10 +1,16 @@
+import networkx as nx
+from functions.global_properties import *
+G = nx.read_edgelist('graph_library/pan.txt')
+
+
 def delete_first_term(L):
     L.pop(0)    #delete_first_term(L)
     return None
 
-#L = [4,3,3,2,2,2]
-#delete_first_term(L)
-#print(L)
+L = [4,3,3,2,2,2]
+print(L)
+delete_first_term(L)
+print(L)
 
 def havel_hakimi_derivative(L):
     d_1 = L[0]
@@ -14,11 +20,9 @@ def havel_hakimi_derivative(L):
     L.sort(reverse = True)
     return None
 
-#L = [3,3,3,2,2,1]
-#havel_hakimi_derivative(L)
-#print(L)
-#havel_hakimi_derivative(L)
-#print(L)
+
+havel_hakimi_derivative(L)
+print(L)
 
 
 def havel_hakimi_process(L):
@@ -38,9 +42,8 @@ def havel_hakimi_process(L, show = False):
             print(L)
     return None
 
-#L = [3,3,3,2,2,1]
-#havel_hakimi_process(L, show=True)
-#print(L)
+havel_hakimi_process(L, show=True)
+
 
 def is_graphic(L):
     havel_hakimi_process(L)
@@ -52,4 +55,4 @@ def residue(G):
     havel_hakimi_process(L)
     return len(L)
 
-#print(residue(G))
+print('Residue:', residue(G))

@@ -71,13 +71,15 @@ def distance(G,v,w):
         
 #############################################################################
 
-
+#returns the center of the graph
 def eccentricity(G,v):
     return len(distance_array (G,v)) - 1
 
+#returns the radius
 def radius(G):
     return min([eccentricity(G,v) for v in V(G)])
 
+#returns the diameter of the graph
 def diameter(G):
     return max([eccentricity(G,v) for v in V(G)])
 

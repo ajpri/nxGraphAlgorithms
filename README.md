@@ -9,4 +9,4 @@ M/W 4:00 PM - 5:15 PM
 
 Austin Pritchett  
 Regina 'Reggie' Andes  
-Yurusalem Tesfaldet
+Yerusalem Tesfaldet

@@ -8,7 +8,20 @@ from functions.local_properties import neighbors
 
 G = nx.read_edgelist('graph_library/pan.txt')
 
+""" Prints a set for  
 
+Parameters
+----------
+G : int
+    The graph containing the vertices and edges
+M : set
+   M is maximal matching if it is not a subset of any other matching in graph G
+    
+Returns
+-------
+set 
+    a set of 
+"""
 def maximal_matching(G,M):
     matching = set([])
     edges = set([])
@@ -22,7 +35,20 @@ def maximal_matching(G,M):
 
 #print('Maximal:', maximal_matching(G,M))
 
+""" Returns the number of maximal matchings
 
+Parameters
+
+-----------
+G: int 
+   A list containing the vertices and edges of graph G
+
+Returns
+
+-------
+int
+    a number of how many maximal matching there are
+"""
 def matching_number(G):
     return len(maximal_matching(G,M))
 

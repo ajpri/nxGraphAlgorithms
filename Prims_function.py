@@ -77,4 +77,12 @@ def minimum_incident_edge(G,T):
     return min_e
     
 
-# Still need Prims
+def kruskals_func(G,T):
+    min_edges = min_incident_edge(T,G)
+    edges = T[1]
+    vertex = T[0]
+    vertex.discard(max(vertex ))
+    if min_edges not in edges:
+        edges.append(min_edges)
+    kf =(vertex,edges) 
+    return kf

@@ -78,6 +78,23 @@ def minimum_incident_edge(G,T):
  
 
 def kruskals_func(G,T):
+    """
+    Returns the edge with the lowest cost
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+            
+    T :     Tuple
+    
+    Returns
+    -------
+    vertex :        set
+                   Returns a set of vertexes that make up the lowest cost route.
+    edges :        set
+                   Returns a set of edges that has the least weight connecting points. 
+    """
     min_edges = min_incident_edge(T,G)
     edges = T[1]
     vertex = T[0]

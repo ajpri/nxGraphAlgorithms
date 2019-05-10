@@ -100,8 +100,8 @@ def degree_sequence(G):
            
     Returns
     -------
-     :   Set
-     Returns degree Sequence of point
+    Set
+        Returns degree Sequence of point
     """
     D = [degree(G,v) for v in V(G)]
     D.sort(reverse = True)
@@ -161,6 +161,17 @@ def avg_degree(G):
 
 
 def distance_array(G,v):
+    """ Returns the distance array
+    Parameters
+    ---------
+    G:          Unweight Graph
+    v:          vertex in G
+   
+    Returns
+    -------
+    N
+       Returns the distance array 
+    """
     N = [[v]]
     Obs = [v]
     i = 1
@@ -176,13 +187,25 @@ def distance_array(G,v):
         return N
 
 def distance(G,v,w):
+    """
+    Returns the edges in a shortest path connecting them.    
     
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+    v :     Vertice
+    w :     Vertice
+    
+    Returns
+    -------
+    Integer
+            Returns the distance between two vertices 
+    """
     D = distance_array(G,v)
     for i in range(len(D)):
         if w in D[i]:
             return i
-        
-#############################################################################
 
 #returns the center of the graph
 def eccentricity(G,v):

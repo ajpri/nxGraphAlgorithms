@@ -1,20 +1,68 @@
 import networkx as nx
 from functions.local_properties import neighbors
 
-#Returns list of vertices
 def V(G):
+    """
+    Returns the verticies of a graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   set
+     Returns list of vertices in a graph
+    """
     return nx.nodes(G) 
 
-#Returns list of edges
 def E(G):
+    """
+    Returns the edges of a graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   set
+     Returns list of edges in a graph
+    """
     return nx.edges(G)  
 
-#Returns number of Verticies
 def n(G):
+    """
+    Returns the number of verticies of a graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   integer
+     Returns number of verticies
+    """
     return len(V(G)) 
 
-#number of edges (size)
 def m(G):
+    """
+    Returns the number of edges (size) of a graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   integer
+     Returns number of edges
+    """
     return len(E(G))    
 
 
@@ -22,26 +70,90 @@ def m(G):
 
 #returns the length of neighbors
 def degree(G,v):
+    """
+    Returns the length of neighbors of a given point
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+    v :     Vertex
+           
+    Returns
+    -------
+     :   integer
+     Returns length of neighbors of a vertex
+    """
     return len(neighbors(G,v))
 
 #print(neighbors(G, '5'))
 
 #returns the degree_sequence
 def degree_sequence(G):
+    """
+    Returns the degree_sequence
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Set
+     Returns degree Sequence of point
+    """
     D = [degree(G,v) for v in V(G)]
     D.sort(reverse = True)
     return D
 
 #returns the maximum degree
 def maxmimum_degree(G):
+    """
+    Returns the Maximum Degree of a Graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Integer
+     Returns Maximum Degree of a Networkx Graph
+    """
     return degree_sequence(G)[0]
 
-#returns the minimum degree
 def minimum_degree(G):
+    """
+    Returns the Minimum Degree of a Graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Integer
+     Returns Minimun Degree of a Networkx Graph
+    """    
     return degree_sequence(G)[-1]
 
-#returns the average of the degree
 def avg_degree(G):
+        """
+    Returns the the average of the degree
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Integer
+     Returns the average of the degree
+    """
     return sum(degree_sequence(G)) / n(G)
 
 

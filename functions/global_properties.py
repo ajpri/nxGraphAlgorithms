@@ -141,7 +141,7 @@ def minimum_degree(G):
     return degree_sequence(G)[-1]
 
 def avg_degree(G):
-        """
+    """
     Returns the the average of the degree
     
     Parameters
@@ -176,6 +176,7 @@ def distance_array(G,v):
         return N
 
 def distance(G,v,w):
+    
     D = distance_array(G,v)
     for i in range(len(D)):
         if w in D[i]:
@@ -185,13 +186,51 @@ def distance(G,v,w):
 
 #returns the center of the graph
 def eccentricity(G,v):
+    """
+    Returns the center of the graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Integer
+     Returns the center of the graph
+    """
     return len(distance_array (G,v)) - 1
 
 #returns the radius
 def radius(G):
+    """
+    Returns the radius of the graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Integer
+     Returns the radius of the graph
+    """
     return min([eccentricity(G,v) for v in V(G)])
 
-#returns the diameter of the graph
 def diameter(G):
+    """
+    Returns the diameter of the Graph
+    
+    Parameters
+    ----------
+    G :     Networkx graph
+            Undirected graph
+           
+    Returns
+    -------
+     :   Integer
+     Returns the diameter of the graph
+    """
     return max([eccentricity(G,v) for v in V(G)])
 

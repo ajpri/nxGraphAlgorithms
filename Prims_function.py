@@ -2,7 +2,7 @@
 """
 Created on Wed May  8 09:34:24 2019
 
-@author: Shadow, ambrosaur
+@author: Austin, ambrosaur
 """
 
 from functions.global_properties import V
@@ -75,7 +75,7 @@ def minimum_incident_edge(G,T):
         if edge_cost(G, e) < edge_cost(G,e):
             min_e = e
     return min_e
-    
+ 
 
 def kruskals_func(G,T):
     min_edges = min_incident_edge(T,G)
@@ -84,5 +84,4 @@ def kruskals_func(G,T):
     vertex.discard(max(vertex ))
     if min_edges not in edges:
         edges.append(min_edges)
-    kf =(vertex,edges) 
-    return kf
+    return (vertex,edges)
